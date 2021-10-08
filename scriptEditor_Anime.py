@@ -1,7 +1,7 @@
-import maya.cmds as cmds
+import pymel.core as pm
 textfull = [" ","`",".","~","*","o","0","8","!","$","^","&","[","]","|","'","/","+","-","_","="]
 for i in range(1,200):
-    cmds.setAttr("file1.frameOffset",i)
+    py.setAttr("file1.frameOffset",i)
     textsave = "\n"*30
     for v in range(1,60):
         textsave+="\n"
@@ -10,4 +10,4 @@ for i in range(1,200):
             colors = cmds.colorAtPoint('file1',o='RGB',u=u/120.0, v=1-(v/60.0))
             index = (colors[0]+colors[1]+colors[2])/3 * 0.8 * 10
             textsave += textfull[int(index)]
-    print textsave
+    print (textsave)
